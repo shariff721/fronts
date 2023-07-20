@@ -19,8 +19,11 @@ class Riff {
     }
 
     removeFront() {
+        if (this.head == null) {
+            return this.head;
+        }
         var deletedNode = this.head;
-        this.head = this.deletedNode.next;
+        this.head = deletedNode.next;
         deletedNode.next = null;
         return this.head;
     }
@@ -28,5 +31,6 @@ class Riff {
 
 var myRiff = new Riff();
 myRiff.addFront(10);
+myRiff.removeFront();
 console.log(myRiff)
 
